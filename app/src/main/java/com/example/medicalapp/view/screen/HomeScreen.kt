@@ -20,6 +20,7 @@ import com.example.medicalapp.view.components.*
 
 @Composable
 fun HomeScreen() {
+    var searchQuery by remember { mutableStateOf("") }
     val navItems = BottomNavRepository.getBottomNavItems()
     var selectedTabIndex by remember { mutableStateOf(0) }
 
@@ -59,6 +60,24 @@ fun HomeScreen() {
                 )
             }
 
+            // Search Bar
+            OutlinedTextField(
+                value = searchQuery,
+                onValueChange = { searchQuery = it },
+                placeholder = {
+                    Text("Search for Medicines", color = Color.Gray)
+                },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 14.dp),
+                singleLine = true,
+                shape = RoundedCornerShape(16.dp),
+                trailingIcon = {
+                    IconButton(onClick = {}) {
+                        Icon(imageVector = Icons.Default.Search, contentDescription = "Search")
+                    }
+                }
+            )
     }
 }
 
