@@ -114,6 +114,45 @@ fun HomeScreen() {
                         }
                     }
 
+                    Spacer(modifier = Modifier.height(15.dp))
+                }
+
+                // Upload Prescription Box
+                item {
+                    Box(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .background(Color.LightGray, shape = RoundedCornerShape(10.dp))
+                    ) {
+                        Row(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(start = 10.dp, end = 10.dp, top = 5.dp, bottom = 5.dp),
+                            horizontalArrangement = Arrangement.SpaceBetween,
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
+                            Image(
+                                painter = painterResource(R.drawable.shopping_basket),
+                                contentDescription = null,
+                                modifier = Modifier.size(30.dp)
+                            )
+                            Text(
+                                text = "Order with prescription",
+                                fontSize = 14.sp,
+                                fontWeight = FontWeight.Bold,
+                                color = Color.Black
+                            )
+                            Button(
+                                onClick = {},
+                                colors = ButtonDefaults.buttonColors(containerColor = Color.Black),
+                                shape = RoundedCornerShape(15.dp)
+                            ) {
+                                Text("Upload now")
+                            }
+                        }
+                    }
+                    Spacer(modifier = Modifier.height(15.dp))
+                }
                 }
             } // Scrollable content Closed
         }
