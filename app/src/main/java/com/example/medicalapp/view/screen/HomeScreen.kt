@@ -153,6 +153,14 @@ fun HomeScreen() {
                     }
                     Spacer(modifier = Modifier.height(15.dp))
                 }
+
+                // Image Pager
+                item {
+                    val imageList = PagerRepository.getPagerImages()
+
+                    ImagePager(imageResIds = imageList)
+
+                    Spacer(modifier = Modifier.height(15.dp))
                 }
             } // Scrollable content Closed
         }
