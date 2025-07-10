@@ -1,4 +1,4 @@
-package com.example.medicalapp.screen
+package com.example.medicalapp.view.screen
 
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
