@@ -78,6 +78,45 @@ fun HomeScreen() {
                     }
                 }
             )
+
+            Spacer(modifier = Modifier.height(15.dp))
+
+            // Scrollable Content
+            LazyColumn(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(horizontal = 14.dp)
+            ) {
+                // Feature Cards
+                item {
+                    val featureList = listOf(
+                        Triple("Pharmacy", "Always genuine", R.drawable.medicine_logo1),
+                        Triple("Lab tests", "Smart reports", R.drawable.shopping_basket),
+                        Triple("Records", "& Insights", R.drawable.antacid_gelusil)
+                    )
+                    val colorList = listOf(
+                        Color(0xFFC25E7F),
+                        Color(0xFF6EC1CB),
+                        Color(0xFF71D276)
+                    )
+
+                    LazyRow(horizontalArrangement = Arrangement.spacedBy(16.dp)) {
+                        items(featureList.size) { index ->
+                            FeatureCard(
+                                title = featureList[index].first,
+                                subtitle = featureList[index].second,
+                                imageResId = featureList[index].third,
+                                backgroundColor = colorList[index],
+                                onClick = {
+                                    println("${featureList[index].first} clicked")
+                                }
+                            )
+                        }
+                    }
+
+                }
+            } // Scrollable content Closed
+        }
     }
 }
 
